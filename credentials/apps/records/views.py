@@ -18,7 +18,7 @@ from django.utils.decorators import method_decorator
 from django.utils.translation import gettext as _
 from django.views.generic import TemplateView, View
 from edx_ace import Recipient, ace
-from ratelimit.decorators import ratelimit
+from django_ratelimit.decorators import ratelimit
 
 from credentials.apps.catalog.models import CourseRun, Pathway, Program
 from credentials.apps.core.models import User

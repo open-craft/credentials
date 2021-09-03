@@ -539,3 +539,43 @@ class ProgramRecordCsvView(RecordsEnabledMixin, View):
         filename = filename.replace(" ", "_").lower().encode("utf-8")
         response["Content-Disposition"] = 'attachment; filename="{filename}.csv"'.format(filename=filename)
         return response
+
+class CredentialListView(ThemeViewMixin, TemplateView):
+    """View to show all of a user's credentials."""
+
+    template_name = "credential_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        program_certs = UserCredential.objects.filter(
+            username=self.request.user.username,
+            program_credentials__isnull=False,
+        )
+        program_certs_dict = [
+            {
+                "program_title": program_cert.credential.program.title,
+                "certificate_url": f"/credentials/{program_cert.uuid.hex}"
+            }
+            for program_cert in program_certs
+        ]
+
+        # for records links
+        program_data = get_user_program_data(
+            self.request.user.username,
+            self.request.site,
+            include_empty_programs=True,
+            include_retired_programs=False,
+        )
+
+        context.update({
+            "child_templates": {
+                "footer": self.select_theme_template(["_footer.html"]),
+                "header": self.select_theme_template(["_header.html"]),
+            },
+            "program_certs": json.dumps(program_certs_dict),
+            "username": self.request.user.username,
+            "lms_base_url": self.request.site.siteconfiguration.lms_url_root,
+            "records_programs": json.dumps(program_data)
+        })
+
+        return context

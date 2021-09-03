@@ -25,6 +25,7 @@ module.exports = {
     analytics: './credentials/static/js/analytics.js',
     records: './credentials/static/components/RecordsFactory.jsx',
     programs: './credentials/static/components/ProgramRecordFactory.jsx',
+    credential_list: './credentials/static/components/CredentialListFactory.jsx',
     masquerading: './credentials/static/components/MasqueradeBannerFactory.jsx',
   },
   output: {

@@ -46,11 +46,11 @@ bleach==4.1.0
     #   -r requirements/production.txt
 bok-choy==1.1.1
     # via -r requirements/dev.txt
-boto3==1.18.51
+boto3==1.18.53
     # via
     #   -r requirements/production.txt
     #   django-ses
-botocore==1.21.51
+botocore==1.21.53
     # via
     #   -r requirements/production.txt
     #   boto3
@@ -101,7 +101,7 @@ coreschema==0.0.4
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
     #   coreapi
-coverage==5.5
+coverage==6.0
     # via -r requirements/dev.txt
 cryptography==3.4.8
     # via
@@ -198,7 +198,7 @@ django-simple-history==3.0.0
     # via
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
-django-sortedm2m==3.0.2
+django-sortedm2m==3.1.1
     # via
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
@@ -257,7 +257,7 @@ edx-auth-backends==4.0.0
     # via
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
-edx-credentials-themes @ git+https://github.com/edx/credentials-themes.git@0.1.87
+edx-credentials-themes @ git+https://github.com/edx/credentials-themes.git@0.1.88
     # via
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
@@ -302,11 +302,11 @@ edx-toggles==4.2.0
     #   -r requirements/production.txt
 factory-boy==3.2.0
     # via -r requirements/dev.txt
-faker==8.14.0
+faker==8.14.1
     # via
     #   -r requirements/dev.txt
     #   factory-boy
-filelock==3.1.0
+filelock==3.3.0
     # via
     #   -r requirements/dev.txt
     #   tox
@@ -577,7 +577,7 @@ python3-openid==3.2.0
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
     #   social-auth-core
-pytz==2021.1
+pytz==2021.3
     # via
     #   -r requirements/dev.txt
     #   -r requirements/production.txt
@@ -593,7 +593,7 @@ pyyaml==5.4.1
     #   docker-compose
     #   edx-django-release-util
     #   edx-i18n-tools
-regex==2021.9.24
+regex==2021.9.30
     # via
     #   -r requirements/dev.txt
     #   black
